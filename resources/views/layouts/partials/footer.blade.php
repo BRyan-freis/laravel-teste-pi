@@ -14,8 +14,8 @@
         <div class="footer-section">
             <h4>Links Rápidos</h4>
             <ul>
-                <li><a href="../home/index.php">Home</a></li>
-                <li><a href="../sobrenos/index.php">Sobre Nós</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre Nós</a></li>
                 <li><a href="#">Serviços</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>

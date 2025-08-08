@@ -9,6 +9,11 @@ Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro.c
 // Rota para processar o formulário de cadastro
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 
+// ROTAS DE LOGIN PERSONALIZADAS
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Rota para exibir a página de termos de serviço
 Route::get('/termos-de-servico', function () {
     return view('termos-de-servico'); // Crie um arquivo termos-de-servico.blade.php se precisar
@@ -24,21 +29,43 @@ Route::get('/home', function () {
     return redirect()->route('home'); // Redireciona para a rota nomeada '/'
 });
 
-Route::get('/area-user', function () {
-    return redirect()->route('area-user'); 
+// ROTA PARA ÁREA DO USUÁRIO (protegida por autenticação)
+
+Route::middleware('login')->group(function () {
+
+    Route::get('/area-usuario', function () {
+
+        return view('area-user'); // <-- Corrigido aqui
+
+    })->name('area.usuario');
+ 
+    // Mantenha apenas uma rota para a área do usuário.
+
+    Route::get('/area', function () {
+
+        return redirect()->route('area.usuario');
+
+    })->name('area-user');
+
 });
 
-Route::get('/area', function () {
-    return view('area-user'); 
-})->name('area-user'); 
+ 
 
-Route::get('/sobre', function () {
-    return redirect()->route('sobre');
+Route::get('/sobrenos', function () {
+    return redirect()->route('sobrenos');
 });
 
-Route::get('/sobre', function () {
-    return view('sobre'); 
-})->name('sobre'); 
+Route::get('/sobrenos', function () {
+    return view('sobrenos'); 
+})->name('sobrenos'); 
+
+Route::get('/login', function () {
+    return redirect()->route('login');
+});
+
+Route::get('/login', function () {
+    return view('login'); 
+})->name('login'); 
 
 Route::get('/perfil', function () {
     return redirect()->route('perfil');
@@ -48,18 +75,6 @@ Route::get('/perfil', function () {
     return view('perfil'); 
 })->name('perfil'); 
 
-// Route::get('/login', function () {
-//     return redirect()->route('acessarlogin');
-// });
-
-// Route::get('/login', function () {
-//     return view('login'); 
-// })->name('acessarlogin'); 
-
-Route::get('/login', function (){
-    return redirect()->route('/login');
-});
-
 Route::get('/recuperacao', function () {
     return redirect()->route('recuperacao');
 });
@@ -67,6 +82,14 @@ Route::get('/recuperacao', function () {
 Route::get('/recuperacao', function () {
     return view('recuperacao'); 
 })->name('recuperacao'); 
+
+Route::get('/redefinicao', function () {
+    return redirect()->route('redefinicao');
+});
+
+Route::get('/redefinicao', function () {
+    return view('redefinicao'); 
+})->name('redefinicao'); 
 
 // Se você não for usar o sistema de autenticação padrão do Laravel (Breeze/Jetstream)
 // e vai gerenciar usuários apenas pela tabela 'usuarios', você pode *remover* ou comentar

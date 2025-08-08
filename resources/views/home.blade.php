@@ -23,7 +23,7 @@
         <div class="container-images">
         <img src="https://www.escoladainteligencia.com.br/wp-content/uploads/2016/09/O-poder-da-empatia-como-ela-impacta-a-vida-das-pessoas-2.jpg" alt="girl" class="slider on">
         <img src="{{ asset('SRC/Img-chat-reunião.jpg') }}" alt="chat" class="slider">
-        <img src="https://abcreporter.com.br/wp-content/uploads/2019/04/conexao-empatia.jpg" alt="girl" class="slider">
+        <img src="{{ asset('SRC/conexao-empatia.jpg') }}" alt="hands" class="slider">
         </div>
         <button id="next-button"><img src="{{ asset('SRC/arrow.png') }}" alt="next-button"></button>
     </div>

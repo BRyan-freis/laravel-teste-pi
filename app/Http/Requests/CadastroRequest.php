@@ -22,12 +22,12 @@ class CadastroRequest extends FormRequest // <<-- MUDANÇA AQUI
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'not_regex:/<script\b[^>]*>/i'],
             'cpf' => ['required', 'string', 'min:11', 'max:14', 'unique:usuarios'], // <<-- MUDANÇA: adicionado CPF, unique:usuarios
             'telefone' => ['required', 'string', 'min:14', 'max:15'], // <<-- MUDANÇA: adicionado Telefone
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuarios', 'regex:/^[A-Za-z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'], // <<-- MUDANÇA: unique:usuarios
-            'senha' => ['required', 'string', 'min:8', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'], // <<-- MUDANÇA: nome do campo 'senha'
-            'confirmar-senha' => ['required', 'string', 'same:senha'], // <<-- MUDANÇA: 'same:senha' para validar confirmação
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuarios','not_regex:/<script\b[^>]*>/i', 'regex:/^[A-Za-z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'], // <<-- MUDANÇA: unique:usuarios
+            'senha' => ['required', 'string', 'min:8','not_regex:/<script\b[^>]*>/i', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'], // <<-- MUDANÇA: nome do campo 'senha'
+            'confirmar-senha' => ['required', 'string', 'same:senha','not_regex:/<script\b[^>]*>/i'], // <<-- MUDANÇA: 'same:senha' para validar confirmação
             'termos' => ['required', 'accepted'], // <<-- MUDANÇA: validação dos termos
         ];
     }
@@ -39,6 +39,14 @@ class CadastroRequest extends FormRequest // <<-- MUDANÇA AQUI
      */
     public function messages(): array
     {
+
+         return [
+            // Mensagem de erro amigável para o usuário
+            'title.not_regex' => 'O campo título contém um formato inválido.',
+            'body.not_regex' => 'O campo de conteúdo contém um formato inválido.',
+        ];
+
+        
         return [
             'name.required' => 'O campo nome é obrigatório.',
             'name.string' => 'O nome deve ser uma string.',

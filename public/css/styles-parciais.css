@@ -176,6 +176,7 @@ header .btn-contato button:hover {
     color: #fff;
     margin-bottom: 15px;
     font-weight: bold;
+    margin-right: 30px;
 }
 
 .footer-section p,
@@ -197,6 +198,7 @@ header .btn-contato button:hover {
     color: #ccc;
     text-decoration: none;
     transition: color 0.3s;
+    margin-left: 65px;
 }
 
 .footer-section ul li a:hover {
@@ -439,9 +441,6 @@ header .btn-contato button:hover {
     }
     .footer-logo a {
         font-size: 20px;
-    }
-    .footer-section h4 {
-        font-size: 18px;
     }
     .footer-section p,
     .footer-section li {

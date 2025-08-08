@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Conexus</title>
     {{-- Isso garante que o caminho para o CSS esteja correto --}}
-    <link rel="stylesheet" href="{{ asset('CSS/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('CSS/styles-cadastro.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -63,12 +63,12 @@
 
     <div class="checkbox-group">
         <input type="checkbox" id="termos" name="termos" required {{ old('termos') ? 'checked' : '' }}>
-        <label for="termos">Eu li e concordo com os <a href="{{ url('/termos-de-servico') }}" target="_blank">Termos de Serviço</a>.</label>
+        <label for="termos">Eu li e concordo com os <a href="{{ url('termos-de-servico') }}" target="_blank">Termos de Serviço</a>.</label>
     </div>
 
     <button type="submit" class="submit-btn">Cadastrar</button>
     </form>
-            <p class="login-link">Já tem uma conta?<a href="{{ route('acessarlogin') }}">Faça login</a></p>
+            <p class="login-link">Já tem uma conta?<a href="{{ route('login') }}">Faça login</a></p>
         </div>
     </div>
 

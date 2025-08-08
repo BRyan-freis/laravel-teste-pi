@@ -13,7 +13,7 @@
           <ul class="links">
             <li><a href="{{ route('perfil') }}">Perfil</a></li>
             <li><a href="{{ route('area-user') }}">Aréa de Usuário</a></li>
-            <li><a href="{{ route('sobre') }}">Sobre Nós</a></li>
+            <li><a href="{{ route('sobrenos') }}">Sobre Nós</a></li>
             <li><a href="">Salas</a></li>
           </ul>
         </nav>
@@ -46,7 +46,7 @@
       </form>
 
       <section class="btn-contato">
-        <a href="{{ route('cadastro.create') }}">
+        <a href="{{ route('login') }}">
             <button>Conecte-se</button>
         </a>
       </section>

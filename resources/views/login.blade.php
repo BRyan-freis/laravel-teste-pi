@@ -15,7 +15,20 @@
             <h1 class="logo">C<span class="logo-o">o</span>nexus</h1>
             <h2>Bem-vindo de volta!</h2>
             <p>Acesse sua conta para continuar.</p>
-            <form action="#">
+            @if ($errors->any())
+                <div class="error-message">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+              @if(session('error'))
+                <p style="color: red">{{ session('error') }}</p>
+            @endif
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
@@ -36,7 +49,7 @@
 
                 <button type="submit" class="submit-btn">Entrar</button>
             </form>
-             <p class="login-link">Não tem uma conta? <a href="{{ route('cadastro')}}">Cadastre-se</a></p>
+             <p class="login-link">Não tem uma conta? <a href="{{ route('cadastro.store')}}">Cadastre-se</a></p>
         </div>
     </div>
 </body>

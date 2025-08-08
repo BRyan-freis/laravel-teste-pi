@@ -85,7 +85,7 @@ p {
 }
 
 .input-group input::placeholder {
-    color: #333; /* Cor do texto placeholder */
+    color: #292929; /* Cor do texto placeholder */
 }
 
 /* --- Grupo de Checkbox (Termos de Serviço) --- */
@@ -150,16 +150,6 @@ p {
     text-decoration: underline;
 }
 
-a.forgot-password {
-    color: #59dda0; /* Cor igual ao texto geral */
-    text-decoration: none;
-    font-size: 0.85rem;
-}
-
-a.forgot-password:hover {
-    color: #59dda0;
-    text-decoration: underline;
-}
 
 
 /* --- Responsividade --- */
