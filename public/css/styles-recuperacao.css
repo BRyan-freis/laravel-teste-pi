@@ -150,10 +150,17 @@ p {
     text-decoration: underline;
 }
 
+.forgot-password {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    margin-left: 125px;
+}
+
 a.forgot-password {
-    color: #59dda0; /* Cor igual ao texto geral */
+    color: #59dda0;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 a.forgot-password:hover {

@@ -13,7 +13,7 @@
           <ul class="links">
             <li><a href="{{ route('perfil') }}">Perfil</a></li>
             <li><a href="{{ route('area-user') }}">Aréa de Usuário</a></li>
-            <li><a href="{{ route('sobrenos') }}">Sobre Nós</a></li>
+            <li><a href="{{ route('sobre') }}">Sobre Nós</a></li>
             <li><a href="">Salas</a></li>
           </ul>
         </nav>
@@ -27,9 +27,9 @@
 
       <nav class="menu-mobile-nav" id="menu-mobile-nav">
         <ul>
-          <li><a href="">Quem Somos</a></li>
-          <li><a href="../area-usuario/index.php">Aréa de Usuário</a></li>
-          <li><a href="../sobrenos/index.php">Sobre Nós</a></li>
+          <li><a href="{{ route('perfil') }}">Perfil</a></li>
+          <li><a href="{{ route('area-user') }}">Aréa de Usuário</a></li>
+          <li><a href="{{ route('sobre') }}">Sobre Nós</a></li>
           <li><a href="">Salas</a></li>
           <li>
             <form class="search-form-mobile" action="#" method="get">

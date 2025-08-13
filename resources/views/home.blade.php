@@ -43,7 +43,7 @@
                         todos podem se sentir à vontade para desabafar, refletir e compartilhar sentimentos,
                         encontrando apoio com respeito, empatia e sem julgamentos.</strong>
                 </p>
-                <a href="#" class="home-btn">Cadastre-se ou Faça Login</a>
+                <a href="{{ route('login') }}" class="home-btn">Cadastre-se ou Faça Login</a>
             </div>
 
             <!-- CARDS -->

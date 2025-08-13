@@ -35,21 +35,21 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
                 </div>
 
                 <div class="options-group">
                     <div class="checkbox-group">
-                        <input type="checkbox" id="manter-conectado" name="manter-conectado">
-                        <label for="manter-conectado">Manter-me conectado</label>
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Manter-me conectado</label>
                     </div>
-                    <a href="{{ route('recuperacao')}}" class="forgot-password">Esqueci a senha</a>
+                    <a href="{{ route('recuperacao') }}" class="forgot-password">Esqueci a senha</a>
                 </div>
 
                 <button type="submit" class="submit-btn">Entrar</button>
             </form>
-             <p class="login-link">Não tem uma conta? <a href="{{ route('cadastro.store')}}">Cadastre-se</a></p>
+             <p class="login-link">Não tem uma conta? <a href="{{ route('cadastro.create') }}">Cadastre-se</a></p>
         </div>
     </div>
 </body>

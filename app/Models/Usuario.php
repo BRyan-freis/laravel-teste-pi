@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable; // <<-- IMPORTANTE para autenticação
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Usuario extends Authenticatable // <<-- Extende Authenticatable para poder logar usuários
+class Usuario extends Authenticatable // <-- PLURAL
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -16,7 +16,7 @@ class Usuario extends Authenticatable // <<-- Extende Authenticatable para poder
      *
      * @var string
      */
-    protected $table = 'usuarios'; // <<-- INFORMA AO MODEL QUE A TABELA É 'usuarios'
+    protected $table = 'usuario'; // <<-- INFORMA AO MODEL QUE A TABELA É 'usuarios'
 
     /**
      * The attributes that are mass assignable.

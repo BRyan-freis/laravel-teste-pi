@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) { // <<-- O nome da tabela é 'usuarios'
+        Schema::create('usuario', function (Blueprint $table) { // <<-- O nome da tabela é 'usuarios'
             $table->id();
             $table->string('name');
             $table->string('cpf')->unique(); // <<-- Adicionado CPF e definido como único
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios'); // <<-- Remove a tabela 'usuarios'
+        Schema::dropIfExists('usuario'); // <<-- Remove a tabela 'usuarios'
     }
 };

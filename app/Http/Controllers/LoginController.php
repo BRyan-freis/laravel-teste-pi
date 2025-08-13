@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Login;
+use Illuminate\Support\Facades\Auth; // Corrigido de Login para Auth
 
 class LoginController extends Controller
 {
-     // Exibe o formulário de login
+    // Exibe o formulário de login
     public function showLoginForm()
     {
-        return view('login'); // resources/views/login.blade.php
+        return view('login'); // [login.blade.php](http://_vscodecontentref_/1)
     }
- 
+
     // Processa o login
     public function login(Request $request)
     {
@@ -20,25 +20,25 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
- 
-        if (Login::attempt($credentials, $request->filled('remember'))) {
+
+        if (Auth::attempt($credentials, $request->filled('remember'))) { // Corrigido de Login para Auth
             $request->session()->regenerate();
-            return redirect()->intended('/area-user'); // ou route('area.usuario')
+            return redirect()->intended('/area.usuario'); // ou route('area.usuario')
         }
- 
+
         return back()->withErrors([
             'email' => 'Email ou senha incorretos.',
         ])->withInput();
     }
- 
+
     // Faz logout
     public function logout(Request $request)
     {
-        Login::logout();
- 
+        Auth::logout(); // Corrigido de Login para Auth
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
- 
+
         return redirect('/login');
     }
 }
