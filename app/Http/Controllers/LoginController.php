@@ -23,7 +23,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials, $request->filled('remember'))) { // Corrigido de Login para Auth
             $request->session()->regenerate();
-            return redirect()->intended('/area.usuario'); // ou route('area.usuario')
+            return redirect()->intended('/area-usuario'); // ou route('area.usuario')
         }
 
         return back()->withErrors([

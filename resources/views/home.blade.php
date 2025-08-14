@@ -73,11 +73,11 @@
 
         <container class="back-video">
             <div class="home-video">
+                <button id="audio-btn">Assista</button>
                 <video id="narracao" play muted playsinline>
                     <source src="{{ asset('SRC/narracao.mp4') }}" type="video/mp4">
                     Seu navegador não suporta vídeo.
                 </video>
-                <button id="audio-btn">🔊 Ativar som</button>
             </div>
         </container>
 
@@ -99,7 +99,7 @@
     audioBtn.addEventListener('click', () => {
         isMuted = !isMuted;
         video.muted = isMuted;
-        audioBtn.textContent = isMuted ? "🔇 Ativar som" : "🔊 Desativar som";
+        audioBtn.textContent = isMuted ? "Ativar som" : "Desativar som";
         video.play();
     });
     </script>

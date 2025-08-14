@@ -74,19 +74,21 @@ h4 {
     background-color: rgb(255, 255, 255);
     position: relative; /* Essencial para o posicionamento do conteúdo sobreposto */
     height: 100vh; /* Ocupa a altura total da tela */
-    width: 80%;
+    width: 75%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white; /* Cor */
+    
 }
 
 /* Botão de áudio */
 #audio-btn {
-    position: absolute;
+    position: center;
     bottom: 20px;
     right: 20px;
+    margin-top: 40px;
     background-color: var(--blue);
     color: #fff;
     border: none;
@@ -99,7 +101,7 @@ h4 {
 }
 
 #audio-btn:hover {
-    background-color: #161616;
+    background-color: #59dda0;
 }
 
 /* ======= TEXTO + BOTÃO ======= */
