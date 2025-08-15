@@ -23,9 +23,9 @@ class CadastroRequest extends FormRequest // <<-- MUDANÇA AQUI
     {
         return [
             'name' => ['required', 'string', 'max:255', 'not_regex:/<script\b[^>]*>/i'],
-            'cpf' => ['required', 'string', 'min:11', 'max:14', 'unique:usuarios'], // <<-- MUDANÇA: adicionado CPF, unique:usuarios
+            'cpf' => ['required', 'string', 'min:11', 'max:14', 'unique:usuario'], // <<-- MUDANÇA: adicionado CPF, unique:usuarios
             'telefone' => ['required', 'string', 'min:14', 'max:15'], // <<-- MUDANÇA: adicionado Telefone
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuarios','not_regex:/<script\b[^>]*>/i', 'regex:/^[A-Za-z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'], // <<-- MUDANÇA: unique:usuarios
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuario','not_regex:/<script\b[^>]*>/i', 'regex:/^[A-Za-z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/'], // <<-- MUDANÇA: unique:usuarios
             'senha' => ['required', 'string', 'min:8','not_regex:/<script\b[^>]*>/i', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'], // <<-- MUDANÇA: nome do campo 'senha'
             'confirmar-senha' => ['required', 'string', 'same:senha','not_regex:/<script\b[^>]*>/i'], // <<-- MUDANÇA: 'same:senha' para validar confirmação
             'termos' => ['required', 'accepted'], // <<-- MUDANÇA: validação dos termos

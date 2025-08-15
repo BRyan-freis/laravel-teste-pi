@@ -44,7 +44,7 @@ class CadastroController extends Controller
             ]);
 
             // Opcional: Autenticar o usuário recém-cadastrado
-            // auth()->login($usuario);
+            auth()->login($usuario);
 
             // Redireciona para a home com uma mensagem de sucesso
             return redirect('/')->with('success', 'Cadastro realizado com sucesso! Bem-vindo(a) à Conexus.');

@@ -27,6 +27,8 @@
               @if(session('error'))
                 <p style="color: red">{{ session('error') }}</p>
             @endif
+
+            <!-- Forms -->
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="input-group">
